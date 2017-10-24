@@ -4,4 +4,16 @@
 
 {% block main %}
 	<h1>This is my PORTFOLIO!!!111oneoneone</h1>
+	<h2>Content types:</h2>
+	<ul>
+		{% for ct in cts %}
+			<li>
+				<a href="{% url 'ctype' ct.id %}">
+					{{ ct.name }}
+				</a>
+			</li>
+		{% empty %}
+			<li>Nothing to see here...</li>
+		{% endfor %}
+	</ul>	
 {%endblock%}

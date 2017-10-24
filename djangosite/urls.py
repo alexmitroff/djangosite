@@ -24,6 +24,7 @@ from portfolio import views as portfolioviews
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', portfolioviews.index, name='index'),
+    url(r'^(?P<ctype_id>\d+)/$', portfolioviews.ctype, name='ctype'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
